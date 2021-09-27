@@ -1,0 +1,265 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+/* VARIABLES */
+:root {
+    --window-bg-color: #ffffffd0;
+    --background-color: white;
+    --text-color: rgb(37, 73, 107);
+    --text-color-alt: rgb(255, 255, 255);
+    --text-info: black;
+    --social-color: rgb(239 59 45);
+    --code-bg-color: var(--social-color);
+    --code-text-color: var(--background-color);
+    --success-color: rgb(30, 97, 30);
+    --error-color: rgb(184, 0, 0);
+    --get-color: rgb(88, 88, 255);
+    --post-color: rgb(72, 160, 72);
+    --put-color: rgb(212, 173, 42);
+    --delete-color: rgb(141, 44, 44);
+    --filter: rgba(39, 39, 39, 0.658);
+    --box-shadow: 0px 0px 5px var(--filter);
+}
+.opacity{
+    opacity: 0.5;
+}
+/* API WELCOME PAGE STYLIZATION */
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: xx-large;
+    padding: 15px;
+    width: calc(10% + 15px);
+    background-color: var(--code-bg-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 4px;
+    z-index: 100000;
+}
+.menu a{
+    color: var(--code-text-color);
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+.menu a:hover{
+    opacity: 1;
+    font-weight: bold;
+}
+a{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--social-color);
+}
+a:hover{
+    opacity: 0.8;
+}
+.alignLeft{
+    text-align: left;
+    margin-left: 75px;
+}
+#api{
+    background-color: var(--background-color);
+}
+#api > .row {
+    display: flex;
+}
+#api > .delimiter > .col{
+    height: 5px;
+    background-color: var(--window-bg-color);
+}
+#api > .row > .col {
+    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 1;
+    margin: 10px;
+    background-color: var(--window-bg-color);
+    box-shadow: var(--box-shadow);
+    color: var(--text-info);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 7px;
+}
+#api > .row:not(.info) > .col{
+    color: var(--text-color);
+}
+#api > .row > .col-1 {
+    width: calc(100% / 12);
+}
+#api > .row > .col-2 {
+    width: calc(100% / 12 * 2);
+}
+#api > .row > .col-3 {
+    width: calc(100% / 12 * 2.9);
+}
+#api > .row > .col-4 {
+    width: calc(100% / 12 * 4);
+}
+#api > .row > .col-5 {
+    width: calc(100% / 12 * 5);
+}
+#api > .row > .col-6 {
+    width: calc(100% / 2);
+}
+#api > .row > .method{
+    color: var(--text-color-alt)!important;
+}
+.post {
+    background-color: var(--post-color)!important;
+}
+.get {
+    background-color: var(--get-color)!important;
+}
+.put {
+    background-color: var(--put-color)!important;
+}
+.delete {
+    background-color: var(--delete-color)!important;
+}
+.success{
+    color: var(--success-color)!important;
+}
+.error{
+    color: var(--error-color)!important;
+}
+#api > .row > .doc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+#api > .row > .doc > p {
+    width: 35%;
+    color: var(--text-info);
+    overflow-wrap: break-word;
+    text-align: left;
+    padding-bottom: 25px;
+    line-height: 1.8em;
+}
+#api > .row > .doc > ul {
+    max-width: 25%;
+}
+#api > .row > .doc > ul > li{
+    text-align: left;
+    line-height: 1.5em;
+}
+#api > .row > .doc > .social {
+    margin-top: 25px;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+#api > .row > .doc > .social > a > i {
+    font-size: 3em;
+    color: var(--social-color);
+    cursor: pointer;
+}
+.code{
+    text-align: left;
+    line-height: 1.3em;
+    letter-spacing: 1.5px;
+    background-color: var(--code-bg-color);
+    color: var(--code-text-color);
+    padding: 5px 10px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+}
+/* INFO PANNELS */
+#api > .routeExpects {
+    width: 50%;
+    margin-left: 25%;
+}
+#api > .routeExpects > .col {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#api > .routeExpects > .col > .route {
+    width: 50%;
+    align-self: flex-start;
+    text-align: left;
+    font-size: x-large;
+    letter-spacing: 1.5px;
+    background-color: var(--code-bg-color);
+    color: var(--code-text-color);
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#api > .routeExpects > .col > h2 {
+    color: var(--text-info);
+    font-size: large;
+}
+#api > .routeExpects > .col > ul {
+    width: fit-content;
+    color: var(--text-color-alt);
+    line-height: 1.5em;
+    padding: 25px 15px;
+    margin: 15px 0;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
+}
+#api > .routeExpects > .col > p {
+    width: 50%;
+    line-height: 1.2em;
+    margin: 15px 0;
+}
+.infoImg{
+    width: 450px;
+    border: 1px solid var(--code-text-color);
+    box-shadow: var(--box-shadow);
+}
+.infoImg:hover{
+    transform: scale(2);
+    cursor: help;
+    z-index: 1000;
+}
